@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CPS.Dal.Interfaces
 {
-    interface IFlowStateRepository : IRepository<FlowState>
+  public  interface IFlowStateRepository : IRepository<FlowState>
     {
     }
 }

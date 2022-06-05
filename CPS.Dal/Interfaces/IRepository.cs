@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPS.Dal.Interfaces
 {
-    interface IRepository<TEntity>where TEntity:BaseEntity
+   public interface IRepository<TEntity>where TEntity:BaseEntity
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int id);

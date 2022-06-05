@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace CPS.Dal.Interfaces
 {
-    interface IUnitOfWork
+   public interface IUnitOfWork
     {
         IEmployeeRepository EmployeeRepository { get;  }
-        IEmployeeInfoRepository EmployeeInfoRepository { get; }
+        IEmployeesInfoRepository EmployeeInfoRepository { get; }
         IProjectRepository ProjectRepository { get; }
         IProjectInfoRepository ProjectInfoRepository { get; }
         ITeamRepository TeamRepository { get; }

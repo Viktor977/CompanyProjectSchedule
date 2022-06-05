@@ -9,9 +9,11 @@ namespace CPS.Dal.Entities
         public string ProjectName { get; set; }
         public DateTime DateStart { get; set; }
         public int Term { get; set; }
+     
         public virtual ProjectInfo ProjectInfo { get; set; }
-        public virtual Team Team { get; set; }
-        public virtual IEnumerable<Employee> Employees { get; set; }
+        public int TeamId { get; set; }
+        public virtual Team CarentTeam { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
       
     }
 }

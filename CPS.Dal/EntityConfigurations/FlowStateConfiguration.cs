@@ -11,7 +11,8 @@ namespace CPS.Dal.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<FlowState> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(t => t.Id);
+           
         }
     }
 }

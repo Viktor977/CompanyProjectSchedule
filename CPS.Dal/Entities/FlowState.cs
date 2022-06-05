@@ -7,9 +7,11 @@ namespace CPS.Dal.Entities
 {
     public class FlowState : BaseEntity
     {
-        public int EmloeeId { get; set; }
+        public int EmploeeId { get; set; }
         public DateTime DateChange { get; set; }
         public StatusTask Status { get; set; }
-
+      
+        public ICollection<ProjectInfo> ProjectInfo { get; set; }
+       
     }
 }

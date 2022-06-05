@@ -9,7 +9,7 @@ namespace CPS.Dal.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MainPosition { get; set; }
-        public int EmployeesInfoId { get; set; }
+     
         public virtual EmployeesInfo EmployeesInfo { get; set; }
         public int ProjectId { get; set; }
         public virtual Project Project { get; set; }

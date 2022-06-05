@@ -6,8 +6,10 @@ namespace CPS.Dal.Entities
 {
     public class ProjectInfo :BaseEntity
     {
-        public int FlowState { get; set; }
+        public int FlowStateId { get; set; }
         public DateTime DateEnd { get; set; }
-        public virtual IEnumerable<FlowState> States { get; set; }
+        public int ProjectId { get; set; }
+        public virtual Project Project { get; set; }
+        public FlowState FlowState { get; set; }
     }
 }

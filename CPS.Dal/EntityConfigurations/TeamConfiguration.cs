@@ -11,7 +11,8 @@ namespace CPS.Dal.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Team> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(t => t.ProjectPosition).HasMaxLength(100);
+          
         }
     }
 }

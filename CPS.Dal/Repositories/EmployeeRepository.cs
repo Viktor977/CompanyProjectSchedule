@@ -1,5 +1,7 @@
-﻿using CPS.Dal.Entities;
+﻿using CPS.Dal.DataAccess;
+using CPS.Dal.Entities;
 using CPS.Dal.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,34 +11,44 @@ namespace CPS.Dal.Repositories
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        public Task AddAsync(Employee entity)
+        private readonly CompanyProjectScheduleDBContext _context;
+        public EmployeeRepository(CompanyProjectScheduleDBContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task AddAsync(Employee entity)
+        {
+           await _context.Employees.AddAsync(entity);
         }
 
-        public void Delete(Employee entity)
+        public  void Delete(Employee entity)
         {
-            throw new NotImplementedException();
+             _context.Employees.Remove(entity);
         }
 
-        public Task DeleteByIdAsync(int id)
+        public async  Task DeleteByIdAsync(int id)
         {
-            throw new NotImplementedException();
+           var employee= await _context.Employees.FindAsync(id);
+            _context.Employees.Remove(employee);
+                
         }
 
-        public Task<IEnumerable<Employee>> GetAllAsync()
+        public async Task<IEnumerable<Employee>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var employees = await _context.Employees.ToListAsync();
+            return  employees;
         }
 
-        public Task<Employee> GetByIdAsync(int id)
+        public async Task<Employee> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var employee = await _context.Employees.FindAsync(id);
+            return employee;
         }
 
         public void UpDate(Employee entity)
         {
-            throw new NotImplementedException();
+            _context.Employees.Update(entity);
+            _context.SaveChanges();
         }
     }
 }

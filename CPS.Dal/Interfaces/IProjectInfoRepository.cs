@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CPS.Dal.Interfaces
 {
-    interface IProjectInfoRepository : IRepository<ProjectInfo>
+    public interface IProjectInfoRepository : IRepository<ProjectInfo>
     {
     }
 }

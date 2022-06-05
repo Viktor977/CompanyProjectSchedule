@@ -18,7 +18,7 @@ namespace CPS.Dal.EntityConfigurations
             builder.Property(t => t.MainPosition).HasMaxLength(200);
 
             builder.HasOne(t => t.EmployeesInfo).WithOne(t => t.Employee).HasForeignKey<EmployeesInfo>(t=>t.EmploeeId);
-            builder.HasOne(t => t.Project).WithMany(t => t.Employees).HasForeignKey(t => t.ProjectId);
+            builder.HasOne(t => t.Project).WithMany(t => t.Employees).HasForeignKey(t => t.ProjectId).HasPrincipalKey(t => t.Id);
         }
     }
 }

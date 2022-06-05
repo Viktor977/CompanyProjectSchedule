@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CPS.Dal.Interfaces
 {
-    interface IEmployeeRepository: IRepository<Employee>
+    public interface IEmployeeRepository : IRepository<Employee>
     {
     }
 }
