@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPS.Dal", "CPS.Dal\CPS.Dal.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPS.Tests", "CPS.Tests\CPS.Tests.csproj", "{A67829A8-2A2F-4A84-A31C-A1E006667782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithDB", "WorkWithDB\WorkWithDB.csproj", "{D59A7581-6BAC-4120-BBF7-AAAC67C73750}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A67829A8-2A2F-4A84-A31C-A1E006667782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67829A8-2A2F-4A84-A31C-A1E006667782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A67829A8-2A2F-4A84-A31C-A1E006667782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59A7581-6BAC-4120-BBF7-AAAC67C73750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59A7581-6BAC-4120-BBF7-AAAC67C73750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59A7581-6BAC-4120-BBF7-AAAC67C73750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59A7581-6BAC-4120-BBF7-AAAC67C73750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

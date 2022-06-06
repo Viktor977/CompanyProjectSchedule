@@ -1,6 +1,7 @@
 ﻿using CPS.Dal.DataAccess;
 using CPS.Dal.Entities;
 using CPS.Dal.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,27 +23,29 @@ namespace CPS.Dal.Repositories
 
         public void Delete(Project entity)
         {
-            throw new NotImplementedException();
+            _context.Projects.Remove(entity);
         }
 
-        public Task DeleteByIdAsync(int id)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var project = await _context.Projects.FindAsync(id);
+            _context.Projects.Remove(project);
         }
 
-        public Task<IEnumerable<Project>> GetAllAsync()
+        public async Task<IEnumerable<Project>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var projects = await _context.Projects.ToListAsync();
+            return projects;
         }
 
-        public Task<Project> GetByIdAsync(int id)
+        public async Task<Project> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Projects.FindAsync(id);
         }
 
         public void UpDate(Project entity)
         {
-            throw new NotImplementedException();
+            _context.Projects.Update(entity);
         }
     }
 }

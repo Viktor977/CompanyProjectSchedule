@@ -1,6 +1,7 @@
 ﻿using CPS.Dal.DataAccess;
 using CPS.Dal.Entities;
 using CPS.Dal.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,34 +16,37 @@ namespace CPS.Dal.Repositories
         {
             _context = context;
         }
-        public Task AddAsync(FlowState entity)
+        public async Task AddAsync(FlowState entity)
         {
-            throw new NotImplementedException();
+            await _context.FlowStates.AddAsync(entity);
         }
 
         public void Delete(FlowState entity)
         {
-            throw new NotImplementedException();
+            _context.FlowStates.Remove(entity);
         }
 
-        public Task DeleteByIdAsync(int id)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var state = await _context.FlowStates.FindAsync(id);
+            _context.FlowStates.Remove(state);
         }
 
-        public Task<IEnumerable<FlowState>> GetAllAsync()
+        public async Task<IEnumerable<FlowState>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var states = await _context.FlowStates.ToListAsync();
+            return states;
         }
 
-        public Task<FlowState> GetByIdAsync(int id)
+        public async Task<FlowState> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var state = await _context.FlowStates.FindAsync(id);
+            return state;
         }
 
         public void UpDate(FlowState entity)
         {
-            throw new NotImplementedException();
+            _context.FlowStates.Update(entity);
         }
     }
 }

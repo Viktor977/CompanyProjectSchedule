@@ -1,6 +1,7 @@
 ﻿using CPS.Dal.DataAccess;
 using CPS.Dal.Entities;
 using CPS.Dal.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,34 +16,36 @@ namespace CPS.Dal.Repositories
         {
             _context = context;
         }
-        public Task AddAsync(Team entity)
+        public async Task AddAsync(Team entity)
         {
-            throw new NotImplementedException();
+            await _context.Teams.AddAsync(entity);
         }
 
         public void Delete(Team entity)
         {
-            throw new NotImplementedException();
+            _context.Teams.Remove(entity);
         }
 
-        public Task DeleteByIdAsync(int id)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var team = await _context.Teams.FindAsync(id);
+            _context.Teams.Remove(team);
+
         }
 
-        public Task<IEnumerable<Team>> GetAllAsync()
+        public async Task<IEnumerable<Team>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Teams.ToListAsync();
         }
 
-        public Task<Team> GetByIdAsync(int id)
+        public async Task<Team> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Teams.FindAsync(id);
         }
 
         public void UpDate(Team entity)
         {
-            throw new NotImplementedException();
+            _context.Teams.Update(entity);
         }
     }
 }

@@ -16,14 +16,14 @@ namespace CPS.Dal.DataAccess
         public DbSet<ProjectInfo> ProjectInfos { get; set; }
         public DbSet<FlowState> FlowStates { get; set; }
 
-        //public CompanyProjectScheduleDBContext(DbContextOptions<CompanyProjectScheduleDBContext> options) : base(options)
-        //{
-        //}
-        public CompanyProjectScheduleDBContext() { }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public CompanyProjectScheduleDBContext(DbContextOptions<CompanyProjectScheduleDBContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CompanyPSDB;Trusted_Connection=True;");
         }
+        //public CompanyProjectScheduleDBContext() { }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CompanyPSDB;Trusted_Connection=True;");
+        //}
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
